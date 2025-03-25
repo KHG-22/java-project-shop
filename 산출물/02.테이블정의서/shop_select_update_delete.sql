@@ -43,3 +43,39 @@ where userid='guard1';
 delete from cart where cart_no=1;
 --guard1 회원 카트아이템 모두삭제
 delete from cart where userid='guard';
+
+/**************orders, order_item*************/
+--guard1 회원의 주문목록
+--select * from orders where userid= 'guard1';
+
+select * from orders o join order_item oi on o.o_no=oi.o_no join product p on oi.p_no=p.p_no where userid='guard1';
+
+--guard1 회원의 주문1개삭제(on delete cascade)
+delete from orders where o_no=1;
+
+--guard1 회원의 주문전체삭제(on delete cascade)
+ delete from orders where userid='guard1';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
