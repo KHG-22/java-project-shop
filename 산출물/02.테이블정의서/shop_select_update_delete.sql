@@ -11,3 +11,10 @@ select * from userinfo where userid='guard1';
 select * from product where p_no=1;
 --select all
 select * from product;
+
+
+/*****************cart***********************/
+--guard1 회원카트아이템리스트
+
+select * from cart c join product p on c.p_no=p.p_no where userid = 'guard1';
+
