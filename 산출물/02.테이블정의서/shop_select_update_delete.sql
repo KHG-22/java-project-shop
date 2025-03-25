@@ -38,3 +38,8 @@ update cart set cart_qty = 3 where userid='guard1' and p_no=1;
 -- guard1 회원카트아이템리스트
 select * from cart c join product p on c.p_no=p.p_no 
 where userid='guard1';
+
+--guard1 회원 카트아이템 1개삭제
+delete from cart where cart_no=1;
+--guard1 회원 카트아이템 모두삭제
+delete from cart where userid='guard';
