@@ -1,6 +1,7 @@
 package com.itwill.shop.order;
 
 import java.util.Date;
+import java.util.List;
 
 import com.itwill.shop.user.User;
 
@@ -21,5 +22,7 @@ public class Order {
 	/**********FK***********/
 	//private String userid;
 	private User user;
+	
+	private List<OrderItem> orderItems;
 	
 }
