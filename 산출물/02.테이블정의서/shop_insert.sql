@@ -14,3 +14,11 @@ insert into product values(6, '샤페이', 700000, 'shaipei.jpg','기타 상세 
 insert into product values(7, '닥스훈트', 800000, 'dachshund.jpg','기타 상세 정보 등...', 0);
 insert into product values(8, '사모예드', 800000, 'samoyed.jpg','기타 상세 정보 등...', 0);
 
+
+/**********************cart insert************************/
+insert into cart(cart_no, cart_qty, userid, p_no) values(cart_cart_no_seq.nextval ,1, 'guard1',1);
+insert into cart(cart_no, cart_qty, userid, p_no) values(cart_cart_no_seq.nextval ,2, 'guard1',2);
+insert into cart(cart_no, cart_qty, userid, p_no) values(cart_cart_no_seq.nextval ,3, 'guard1',3);
+
+insert into cart(cart_no, cart_qty, userid, p_no) values(cart_cart_no_seq.nextval ,1, 'guard2',1);
+insert into cart(cart_no, cart_qty, userid, p_no) values(cart_cart_no_seq.nextval ,2, 'guard2',2);
