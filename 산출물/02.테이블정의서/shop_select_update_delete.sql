@@ -55,6 +55,8 @@ delete from orders where o_no=1;
 
 --guard1 회원의 주문전체삭제(on delete cascade)
  delete from orders where userid='guard1';
+ 
+ select c.cart_no,p.p_name, u.name from cart c join product p on c.p_no=p.p_no join userinfo u where c.userid=u.userid where userid='guard1';
 
 
 
