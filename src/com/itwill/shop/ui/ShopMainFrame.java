@@ -15,6 +15,9 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Cursor;
+import javax.swing.JScrollPane;
+import javax.swing.border.LineBorder;
+import java.awt.Dimension;
 
 public class ShopMainFrame extends JFrame {
 
@@ -25,6 +28,7 @@ public class ShopMainFrame extends JFrame {
 	private JTabbedPane memberTabbedPane;
 	private JPanel productListPanel;
 	private JTextField searchTextField;
+	private JPanel productContentListPanel;
 
 	/**
 	 * Launch the application.
@@ -124,5 +128,40 @@ public class ShopMainFrame extends JFrame {
 		
 		productListPanel = new JPanel();
 		shopTabbedPane.addTab("제품", null, productListPanel, null);
+		productListPanel.setLayout(new BorderLayout(0, 0));
+		
+		JScrollPane productListScrollPane = new JScrollPane();
+		productListScrollPane.setPreferredSize(new Dimension(400, 500));
+		productListPanel.add(productListScrollPane, BorderLayout.CENTER);
+		
+		productContentListPanel = new JPanel();
+		productContentListPanel.setPreferredSize(new Dimension(340, 600));
+		FlowLayout flowLayout_2 = (FlowLayout) productContentListPanel.getLayout();
+		flowLayout_2.setAlignment(FlowLayout.LEFT);
+		productListScrollPane.setViewportView(productContentListPanel);
+		
+		JPanel productPanel = new JPanel();
+		productPanel.setPreferredSize(new Dimension(100, 100));
+		productPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		productPanel.setBackground(new Color(255, 255, 255));
+		productContentListPanel.add(productPanel);
+		
+		JPanel productPanel_1 = new JPanel();
+		productPanel_1.setPreferredSize(new Dimension(100, 100));
+		productPanel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		productPanel_1.setBackground(Color.WHITE);
+		productContentListPanel.add(productPanel_1);
+		
+		JPanel productPanel_2 = new JPanel();
+		productPanel_2.setPreferredSize(new Dimension(100, 100));
+		productPanel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
+		productPanel_2.setBackground(Color.WHITE);
+		productContentListPanel.add(productPanel_2);
+		
+		JPanel productPanel_3 = new JPanel();
+		productPanel_3.setPreferredSize(new Dimension(100, 100));
+		productPanel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
+		productPanel_3.setBackground(Color.WHITE);
+		productContentListPanel.add(productPanel_3);
 	}
 }
