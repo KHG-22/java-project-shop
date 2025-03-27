@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Cursor;
 
 public class ShopMainFrame extends JFrame {
 
@@ -69,6 +70,7 @@ public class ShopMainFrame extends JFrame {
 		searchTextField.setColumns(17);
 		
 		JButton searchButton = new JButton("");
+		searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		searchButton.setBorder(null);
 		searchButton.setBackground(new Color(255, 255, 255));
 		searchButton.setIcon(new ImageIcon(ShopMainFrame.class.getResource("/images/search_image20.png")));
@@ -79,7 +81,25 @@ public class ShopMainFrame extends JFrame {
 		northSearchPanel.add(searchButton);
 		
 		JPanel southMenuPanel = new JPanel();
+		FlowLayout flowLayout_1 = (FlowLayout) southMenuPanel.getLayout();
+		flowLayout_1.setHgap(60);
+		southMenuPanel.setBackground(new Color(255, 255, 255));
 		contentPane.add(southMenuPanel, BorderLayout.SOUTH);
+		
+		JButton southSearchNewButton = new JButton("");
+		southSearchNewButton.setBorder(null);
+		southSearchNewButton.setIcon(new ImageIcon(ShopMainFrame.class.getResource("/images/search_dog50.png")));
+		southMenuPanel.add(southSearchNewButton);
+		
+		JButton southHomeButton = new JButton("");
+		southHomeButton.setBorder(null);
+		southHomeButton.setIcon(new ImageIcon(ShopMainFrame.class.getResource("/images/shoppingmall.png")));
+		southMenuPanel.add(southHomeButton);
+		
+		JButton southMyButton = new JButton("");
+		southMyButton.setBorder(null);
+		southMyButton.setIcon(new ImageIcon(ShopMainFrame.class.getResource("/images/user.png")));
+		southMenuPanel.add(southMyButton);
 		
 		shopTabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(shopTabbedPane, BorderLayout.CENTER);
