@@ -20,7 +20,10 @@ import javax.swing.border.LineBorder;
 import java.awt.Dimension;
 
 public class ShopMainFrame extends JFrame {
-
+	/*
+	 * Service객체선언
+	 */
+	Product
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTabbedPane shopTabbedPane;
@@ -137,31 +140,35 @@ public class ShopMainFrame extends JFrame {
 		productContentListPanel = new JPanel();
 		productContentListPanel.setPreferredSize(new Dimension(340, 600));
 		FlowLayout flowLayout_2 = (FlowLayout) productContentListPanel.getLayout();
+		flowLayout_2.setVgap(20);
+		flowLayout_2.setHgap(27);
 		flowLayout_2.setAlignment(FlowLayout.LEFT);
 		productListScrollPane.setViewportView(productContentListPanel);
-		
+		/***********************productPanel start****************************/
 		JPanel productPanel = new JPanel();
-		productPanel.setPreferredSize(new Dimension(100, 100));
+		productPanel.setPreferredSize(new Dimension(130, 130));
 		productPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		productPanel.setBackground(new Color(255, 255, 255));
+		productPanel.setLayout(null);
 		productContentListPanel.add(productPanel);
+		/***********************productPanel end*****************************/
 		
-		JPanel productPanel_1 = new JPanel();
-		productPanel_1.setPreferredSize(new Dimension(100, 100));
-		productPanel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
-		productPanel_1.setBackground(Color.WHITE);
-		productContentListPanel.add(productPanel_1);
+		displayProductList();
+	}//생성자의끝
+	/*
+	 * 상품리스트보여주기
+	 */
+	private void displayProductList() {
+		for(int i=0;i<5;i++) {
+			JPanel productPanel = new JPanel();
+			productPanel.setPreferredSize(new Dimension(130, 130));
+			productPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
+			productPanel.setBackground(new Color(255, 255, 255));
+			productPanel.setLayout(null);
+			productContentListPanel.add(productPanel);
+		}
 		
-		JPanel productPanel_2 = new JPanel();
-		productPanel_2.setPreferredSize(new Dimension(100, 100));
-		productPanel_2.setBorder(new LineBorder(new Color(0, 0, 0)));
-		productPanel_2.setBackground(Color.WHITE);
-		productContentListPanel.add(productPanel_2);
-		
-		JPanel productPanel_3 = new JPanel();
-		productPanel_3.setPreferredSize(new Dimension(100, 100));
-		productPanel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
-		productPanel_3.setBackground(Color.WHITE);
-		productContentListPanel.add(productPanel_3);
 	}
+	
+	
 }
