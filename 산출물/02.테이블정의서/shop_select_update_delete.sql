@@ -36,48 +36,20 @@ update cart set cart_qty = 3 where userid='guard1' and p_no=1;
 
 
 -- guard1 회원카트아이템리스트
-select * from cart c join product p on c.p_no=p.p_no 
-where userid='guard1';
+select * from cart c join product p on c.p_no=p.p_no join userinfo u on c.userid=u.userid where c.userid='guard1';
 
 --guard1 회원 카트아이템 1개삭제
 delete from cart where cart_no=1;
 --guard1 회원 카트아이템 모두삭제
-delete from cart where userid='guard';
+delete from cart where userid='guard1';
 
-/**************orders, order_item*************/
+/*********************orders,order_item*************************/
 --guard1 회원의 주문목록
---select * from orders where userid= 'guard1';
-
-select * from orders o join order_item oi on o.o_no=oi.o_no join product p on oi.p_no=p.p_no where userid='guard1';
+--select * from orders where userid='guard1';
+select * from orders o join order_item oi on o.o_no=oi.o_no join product p on oi.p_no=p.p_no where o.userid='guard1';
 
 --guard1 회원의 주문1개삭제(on delete cascade)
 delete from orders where o_no=1;
 
 --guard1 회원의 주문전체삭제(on delete cascade)
- delete from orders where userid='guard1';
- 
- select c.cart_no,p.p_name, u.name from cart c join product p on c.p_no=p.p_no join userinfo u where c.userid=u.userid where userid='guard1';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+delete from orders where userid='guard1';
